@@ -1,4 +1,4 @@
-/* Custom Styles */
+/* Custom Styles untuk FAQ dan Interaksi */
 .faq-item.active {
     border-color: #6366f1;
     background-color: #f8faff;
@@ -9,7 +9,7 @@
     transform: rotate(45deg);
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar agar UI lebih modern */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -22,4 +22,49 @@
 }
 ::-webkit-scrollbar-thumb:hover {
     background: #6366f1;
+}
+
+/* Memastikan transisi smooth saat navigasi */
+html {
+    scroll-behavior: smooth;
+}
+/* Custom Styles */
+.faq-item.active { border-color: #6366f1; background-color: #f8faff; }
+.faq-question.active span { transform: rotate(45deg); transition: transform 0.3s; }
+
+/* Mobile Menu Transition */
+#mobile-menu {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+/* Custom Styles untuk Dark Mode dan Interaksi */
+.faq-item.active { 
+    border-color: #6366f1; 
+    background-color: #f8faff; 
+}
+.dark .faq-item.active {
+    border-color: #818cf8;
+    background-color: #1e1b4b;
+}
+
+.faq-question.active span { 
+    transform: rotate(45deg); 
+    transition: transform 0.3s; 
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+.dark ::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+
+/* Smooth Transition untuk Dark Mode */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
 }

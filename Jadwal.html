@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Lengkap - FutureTech 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Inisialisasi Tailwind Dark Mode config
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300 font-['Plus_Jakarta_Sans']">
+
+    <nav class="fixed w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold text-indigo-600 tracking-tight dark:text-indigo-400">FutureTech.</a>
+            
+            <ul class="hidden md:flex space-x-8 font-semibold text-sm">
+                <li><a href="index.html" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Beranda</a></li>
+                <li><a href="jadwal.html" class="text-indigo-600 dark:text-indigo-400">Jadwal</a></li>
+                <li><a href="pendaftaran.html" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Pendaftaran</a></li>
+                <li><a href="faq.html" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">FAQ</a></li>
+            </ul>
+
+            <div class="flex items-center gap-2 md:gap-4">
+                <button id="dark-toggle" class="p-2.5 bg-slate-100 dark:bg-slate-800 rounded-2xl hover:scale-110 transition-all text-xl">
+                    🌓
+                </button>
+                
+                <button id="menu-btn" class="md:hidden text-slate-800 dark:text-white focus:outline-none p-2">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-6 py-6 transition-all duration-300">
+            <ul class="space-y-4 font-bold text-lg text-slate-700 dark:text-slate-300">
+                <li><a href="index.html" class="block hover:text-indigo-600">Beranda</a></li>
+                <li><a href="jadwal.html" class="block text-indigo-600">Jadwal</a></li>
+                <li><a href="pendaftaran.html" class="block hover:text-indigo-600">Pendaftaran</a></li>
+                <li><a href="faq.html" class="block hover:text-indigo-600">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-16 bg-gradient-to-b from-indigo-50 to-slate-50 dark:from-slate-900 dark:to-slate-950">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <span class="px-4 py-1.5 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block">Event Timeline</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">Agenda Utama & Narasumber</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">Satu hari penuh eksplorasi teknologi bersama para ahli industri global dan praktisi senior UX Indonesia.</p>
+        </div>
+    </section>
+
+    <section class="py-12 bg-slate-50 dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-2xl font-bold border-l-4 border-indigo-600 pl-4 mb-10 dark:text-white">Keynote Speakers</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="group bg-white dark:bg-slate-900 p-4 rounded-[32px] border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all" data-aos="fade-up">
+                    <div class="h-72 rounded-[24px] overflow-hidden mb-6 relative">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute bottom-4 left-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur px-3 py-1 rounded-lg text-xs font-bold text-indigo-600 dark:text-indigo-400">Google UX</div>
+                    </div>
+                    <h3 class="text-xl font-bold leading-tight dark:text-white">Alex Johnson</h3>
+                    <p class="text-slate-500 mt-1 italic text-sm">Senior UX Researcher at Google</p>
+                </div>
+
+                <div class="group bg-white dark:bg-slate-900 p-4 rounded-[32px] border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-72 rounded-[24px] overflow-hidden mb-6 relative">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute bottom-4 left-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur px-3 py-1 rounded-lg text-xs font-bold text-indigo-600 dark:text-indigo-400">Tech CEO</div>
+                    </div>
+                    <h3 class="text-xl font-bold leading-tight dark:text-white">Sarah Salim</h3>
+                    <p class="text-slate-500 mt-1 italic text-sm">CEO of DesignID</p>
+                </div>
+
+                <div class="group bg-white dark:bg-slate-900 p-4 rounded-[32px] border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-72 rounded-[24px] overflow-hidden mb-6 relative">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute bottom-4 left-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur px-3 py-1 rounded-lg text-xs font-bold text-indigo-600 dark:text-indigo-400">Engineering</div>
+                    </div>
+                    <h3 class="text-xl font-bold leading-tight dark:text-white">Budi Pratama</h3>
+                    <p class="text-slate-500 mt-1 italic text-sm">Tech Lead at Asia Digital</p>
+                </div>
+
+                <div class="group bg-white dark:bg-slate-900 p-4 rounded-[32px] border border-slate-100 dark:border-slate-800 hover:shadow-2xl transition-all" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-72 rounded-[24px] overflow-hidden mb-6 relative">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute bottom-4 left-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur px-3 py-1 rounded-lg text-xs font-bold text-indigo-600 dark:text-indigo-400">AI Ethics</div>
+                    </div>
+                    <h3 class="text-xl font-bold leading-tight dark:text-white">Elena Kuznetsova</h3>
+                    <p class="text-slate-500 mt-1 italic text-sm">Head of AI Ethics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white dark:bg-slate-900 transition-colors">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-4">Rincian Acara (Full Day)</h2>
+                <p class="text-slate-500 dark:text-slate-400">Pahami alur seminar agar Anda tidak melewatkan sesi favorit.</p>
+            </div>
+
+            <div class="relative border-l-2 border-indigo-100 dark:border-indigo-900 ml-4 md:ml-32">
+                <div class="mb-12 relative" data-aos="fade-left">
+                    <div class="absolute -left-1.5 top-2 w-3 h-3 bg-indigo-600 rounded-full"></div>
+                    <div class="md:absolute md:-left-36 md:top-0 font-bold text-indigo-600 dark:text-indigo-400 text-sm md:text-base">08:00 - 09:00</div>
+                    <div class="ml-6 bg-slate-50 dark:bg-slate-800/50 p-6 rounded-3xl border border-slate-100 dark:border-slate-800">
+                        <h4 class="font-bold text-xl text-slate-900 dark:text-white">Registrasi & Morning Coffee</h4>
+                        <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm leading-relaxed">Pengambilan seminar kit dan networking pagi antar inovator teknologi.</p>
+                    </div>
+                </div>
+
+                <div class="mb-12 relative" data-aos="fade-left">
+                    <div class="absolute -left-1.5 top-2 w-3 h-3 bg-indigo-600 rounded-full"></div>
+                    <div class="md:absolute md:-left-36 md:top-0 font-bold text-indigo-600 dark:text-indigo-400 text-sm md:text-base">09:00 - 10:30</div>
+                    <div class="ml-6 bg-white dark:bg-slate-800 p-8 rounded-3xl border border-indigo-100 dark:border-indigo-900 shadow-xl shadow-indigo-100/20 dark:shadow-none">
+                        <span class="inline-block px-3 py-1 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 rounded-lg text-xs font-bold mb-3 uppercase">Keynote: Masa Depan HCI</span>
+                        <h4 class="font-bold text-xl text-slate-900 dark:text-white">Etika & Estetika AI dalam UX Modern</h4>
+                        <p class="text-slate-600 dark:text-slate-400 mt-2 italic text-sm underline underline-offset-4 decoration-indigo-200">Pembicara: Alex Johnson</p>
+                        <p class="text-slate-500 dark:text-slate-400 mt-4 leading-relaxed text-sm">Mendalami integrasi AI dalam alur kerja desain modern tanpa mengabaikan aspek emosional manusia.</p>
+                    </div>
+                </div>
+
+                <div class="mb-12 relative" data-aos="fade-left">
+                    <div class="absolute -left-1.5 top-2 w-3 h-3 bg-indigo-600 rounded-full"></div>
+                    <div class="md:absolute md:-left-36 md:top-0 font-bold text-indigo-600 dark:text-indigo-400 text-sm md:text-base">13:00 - 15:00</div>
+                    <div class="ml-6 grid md:grid-cols-2 gap-4">
+                        <div class="bg-indigo-50 dark:bg-indigo-950/30 p-6 rounded-3xl border border-indigo-100 dark:border-indigo-900">
+                            <h5 class="font-bold text-indigo-800 dark:text-indigo-300">Track A: Technical</h5>
+                            <p class="text-xs dark:text-slate-400 mt-2 italic">Building Inclusive Web with AI Tools</p>
+                        </div>
+                        <div class="bg-purple-50 dark:bg-purple-950/30 p-6 rounded-3xl border border-purple-100 dark:border-purple-900">
+                            <h5 class="font-bold text-purple-800 dark:text-purple-300">Track B: Creative</h5>
+                            <p class="text-xs dark:text-slate-400 mt-2 italic">Humanizing Voice Interfaces (VUI)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-12 relative" data-aos="fade-left">
+                    <div class="absolute -left-1.5 top-2 w-3 h-3 bg-indigo-600 rounded-full"></div>
+                    <div class="md:absolute md:-left-36 md:top-0 font-bold text-indigo-600 dark:text-indigo-400 text-sm md:text-base">15:30 - 16:30</div>
+                    <div class="ml-6 bg-slate-900 dark:bg-black p-6 rounded-3xl border border-slate-800 text-white">
+                        <h4 class="font-bold text-xl text-indigo-400 tracking-tight">Closing & Networking</h4>
+                        <p class="mt-2 text-slate-400 text-sm">Penyerahan sertifikat secara simbolis dan foto bersama seluruh inovator digital.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-slate-900 dark:bg-black text-white border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="font-bold text-xl tracking-tight mb-4">Future<span class="text-indigo-400">Tech.</span></p>
+            <p class="text-slate-400 text-sm opacity-60">© 2025 UAS IMK Kelompok 2 - Universitas Darussalam Gontor</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Logic Menu Mobile (Sama dengan index.html)
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    </script>
+</body>
+</html>
