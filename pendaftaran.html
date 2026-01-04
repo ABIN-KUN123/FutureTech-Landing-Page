@@ -8,8 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>
+        // Konfigurasi Tailwind Dark Mode
         tailwind.config = {
             darkMode: 'class',
+        }
+
+        // Script Inisialisasi: Menghindari kedipan putih saat refresh
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
         }
     </script>
 </head>
@@ -20,34 +28,38 @@
             <a href="index.html" class="text-xl md:text-2xl font-extrabold text-indigo-600 tracking-tight dark:text-indigo-400">FutureTech.</a>
             
             <ul class="hidden md:flex space-x-8 font-semibold text-sm">
-                <li><a href="index.html" class="hover:text-indigo-600 transition-colors">Beranda</a></li>
-                <li><a href="jadwal.html" class="hover:text-indigo-600 transition-colors">Jadwal</a></li>
-                <li><a href="pendaftaran.html" class="text-indigo-600">Pendaftaran</a></li>
-                <li><a href="faq.html" class="hover:text-indigo-600 transition-colors">FAQ</a></li>
+                <li><a href="index.html" class="hover:text-indigo-600 transition-colors dark:text-slate-300 dark:hover:text-indigo-400">Beranda</a></li>
+                <li><a href="jadwal.html" class="hover:text-indigo-600 transition-colors dark:text-slate-300 dark:hover:text-indigo-400">Jadwal</a></li>
+                <li><a href="pendaftaran.html" class="text-indigo-600 dark:text-indigo-400">Pendaftaran</a></li>
+                <li><a href="faq.html" class="hover:text-indigo-600 transition-colors dark:text-slate-300 dark:hover:text-indigo-400">FAQ</a></li>
             </ul>
 
             <div class="flex items-center gap-2">
-                <button id="dark-toggle" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-xl hover:scale-110 transition-all text-lg">🌓</button>
+                <button id="dark-toggle" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-xl hover:scale-110 transition-all text-lg" title="Ganti Tema">
+                    🌓
+                </button>
                 <button id="menu-btn" class="md:hidden text-slate-800 dark:text-white p-2">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
                 </button>
             </div>
         </div>
 
         <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-6 py-6 transition-all duration-300">
             <ul class="space-y-4 font-bold text-lg">
-                <li><a href="index.html" class="block">Beranda</a></li>
-                <li><a href="jadwal.html" class="block">Jadwal</a></li>
-                <li><a href="pendaftaran.html" class="block text-indigo-600">Pendaftaran</a></li>
-                <li><a href="faq.html" class="block">FAQ</a></li>
+                <li><a href="index.html" class="block dark:text-slate-300">Beranda</a></li>
+                <li><a href="jadwal.html" class="block dark:text-slate-300">Jadwal</a></li>
+                <li><a href="pendaftaran.html" class="block text-indigo-600 dark:text-indigo-400">Pendaftaran</a></li>
+                <li><a href="faq.html" class="block dark:text-slate-300">FAQ</a></li>
             </ul>
         </div>
     </nav>
 
     <header class="pt-32 pb-8 md:pt-40 md:pb-12 bg-white dark:bg-slate-900 text-center transition-colors">
         <div class="max-w-3xl mx-auto px-6">
-            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4" data-aos="fade-up">Selesaikan Pendaftaran Anda</h1>
-            <p class="text-slate-500 dark:text-slate-400 text-base md:text-lg" data-aos="fade-up" data-aos-delay="100">Amankan tiket FutureTech 2025 dan pastikan rute Anda menuju UNIDA Gontor sudah benar.</p>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4" data-aos="fade-up">Konfirmasi Pendaftaran</h1>
+            <p class="text-slate-500 dark:text-slate-400 text-base md:text-lg" data-aos="fade-up" data-aos-delay="100">Silakan lengkapi data diri dan unggah bukti transfer untuk memproses tiket Anda.</p>
         </div>
     </header>
 
@@ -55,11 +67,17 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid lg:grid-cols-12 gap-8 md:gap-12 items-start">
                 
-                <div class="lg:col-span-7 space-y-6 md:space-y-8" data-aos="fade-right">
+                <div class="lg:col-span-5 space-y-6 md:space-y-8" data-aos="fade-right">
                     <div class="bg-indigo-600 p-6 md:p-10 rounded-[2rem] md:rounded-[40px] text-white shadow-2xl shadow-indigo-200 dark:shadow-none relative overflow-hidden">
                         <h2 class="text-2xl md:text-3xl font-extrabold mb-2">Paket Platinum</h2>
-                        <p class="text-3xl md:text-4xl font-black">Rp 250.000</p>
-                        <ul class="mt-6 space-y-3 opacity-90 font-medium text-sm md:text-base">
+                        <p class="text-3xl md:text-4xl font-black mb-4">Rp 250.000</p>
+                        <div class="bg-indigo-500/30 p-4 rounded-2xl border border-indigo-400/50 mb-6">
+                            <p class="text-xs uppercase tracking-widest font-bold opacity-80 mb-1">Transfer Ke Rekening:</p>
+                            <p class="text-lg font-bold">Bank Syariah Indonesia (BSI)</p>
+                            <p class="text-2xl font-black tracking-wider">7123456789</p>
+                            <p class="text-sm opacity-90">a.n Panitia FutureTech UNIDA</p>
+                        </div>
+                        <ul class="space-y-3 opacity-90 font-medium text-sm md:text-base">
                             <li>✓ Akses Full Day Seminar</li>
                             <li>✓ E-Sertifikat Nasional</li>
                             <li>✓ Premium Seminar Kit & T-Shirt</li>
@@ -72,44 +90,80 @@
                             <div class="w-10 h-10 md:w-12 md:h-12 bg-indigo-100 dark:bg-indigo-900/50 rounded-xl md:rounded-2xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-xl md:text-2xl">📍</div>
                             <div>
                                 <h3 class="text-lg md:text-xl font-bold dark:text-white">Lokasi Kampus</h3>
-                                <p class="text-xs md:text-sm text-slate-500">UNIDA Gontor, Ponorogo</p>
+                                <p class="text-xs md:text-sm text-slate-500 font-medium">Jl. Raya Siman, Ponorogo</p>
                             </div>
                         </div>
-                        <div class="w-full h-[300px] md:h-[500px] rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700">
+                        <div class="w-full h-[300px] rounded-3xl overflow-hidden border-4 border-slate-50 dark:border-slate-800 shadow-inner">
                             <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.3413812239!2d111.4901!3d-7.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwNTQnMDAuMCJTIDExMcKwMjknMjQuNCJF!5e0!3m2!1sid!2sid!4v1700000000000" 
-                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.350699298538!2d111.49013447587844!3d-7.905494078673756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e790ff02424982f%3A0x8613460980992305!2sUniversity%20of%20Darussalam%20Gontor!5e0!3m2!1sen!2sid!4v1709600000000!5m2!1sen!2sid" 
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
                         </div>
+                        <a href="https://maps.app.goo.gl/uX3L5q6J8L1oGvC6A" target="_blank" class="block text-center mt-4 text-sm font-bold text-indigo-600 dark:text-indigo-400 hover:underline">Buka di Google Maps →</a>
                     </div>
                 </div>
 
-                <div class="lg:col-span-5" data-aos="fade-left">
-                    <div class="bg-white dark:bg-slate-900 p-6 md:p-10 rounded-[2rem] md:rounded-[40px] shadow-2xl border border-slate-100 dark:border-slate-800 sticky top-24 transition-colors">
-                        <div class="mb-6 md:mb-8">
-                            <h3 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white">Isi Formulir</h3>
-                            <p class="text-slate-500 dark:text-slate-400 text-xs md:text-sm mt-1">Gunakan data asli sesuai kartu identitas Anda.</p>
+                <div class="lg:col-span-7" data-aos="fade-left">
+                    <div class="bg-white dark:bg-slate-900 p-6 md:p-10 rounded-[2rem] md:rounded-[40px] shadow-2xl border border-slate-100 dark:border-slate-800 transition-colors">
+                        <div class="mb-6 md:mb-8 text-center md:text-left">
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white">Isi Formulir & Bukti Bayar</h3>
+                            <p class="text-slate-500 dark:text-slate-400 text-xs md:text-sm mt-1">Gunakan format gambar (JPG/PNG) atau PDF untuk bukti bayar.</p>
                         </div>
                         
-                        <form id="regForm" class="space-y-4 md:space-y-5">
-                            <div>
-                                <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2 ml-1">Nama Lengkap</label>
-                                <input type="text" id="userName" placeholder="Nama Sesuai KTP" class="w-full px-5 py-3.5 md:py-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl md:rounded-2xl outline-none focus:ring-2 focus:ring-indigo-600 transition-all dark:text-white" required>
+                        <form id="regForm" class="grid md:grid-cols-2 gap-4 md:gap-6">
+                            <div class="md:col-span-2">
+                                <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2 ml-1">Nama Lengkap (Beserta Gelar)</label>
+                                <input type="text" id="userName" placeholder="Contoh: Budi Santoso, S.Kom." class="w-full px-5 py-3.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl md:rounded-2xl outline-none focus:ring-2 focus:ring-indigo-600 transition-all dark:text-white" required>
                             </div>
+
                             <div>
                                 <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2 ml-1">Email Aktif</label>
-                                <input type="email" id="userEmail" placeholder="nama@email.com" class="w-full px-5 py-3.5 md:py-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl md:rounded-2xl outline-none focus:ring-2 focus:ring-indigo-600 transition-all dark:text-white" required>
+                                <input type="email" id="userEmail" placeholder="nama@email.com" class="w-full px-5 py-3.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl md:rounded-2xl outline-none focus:ring-2 focus:ring-indigo-600 transition-all dark:text-white" required>
                             </div>
-                            <div class="p-3 md:p-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-xl md:rounded-2xl flex gap-3 items-start md:items-center">
-                                <input type="checkbox" class="w-5 h-5 mt-0.5 md:mt-0 accent-indigo-600" required>
-                                <p class="text-[10px] md:text-xs text-indigo-700 dark:text-indigo-400 leading-tight">Saya menyetujui syarat & ketentuan pendaftaran FutureTech 2025.</p>
+
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2 ml-1">No. WhatsApp</label>
+                                <input type="tel" id="userPhone" placeholder="08123456xxx" class="w-full px-5 py-3.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl md:rounded-2xl outline-none focus:ring-2 focus:ring-indigo-600 transition-all dark:text-white" required>
                             </div>
-                            <button type="submit" class="w-full bg-indigo-600 text-white py-4 md:py-5 rounded-xl md:rounded-2xl font-bold text-base md:text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100 dark:shadow-none active:scale-95">Bayar & Kirim</button>
+
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2 ml-1">Instansi / Universitas</label>
+                                <input type="text" id="userOrg" placeholder="Contoh: UNIDA Gontor" class="w-full px-5 py-3.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl md:rounded-2xl outline-none focus:ring-2 focus:ring-indigo-600 transition-all dark:text-white" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2 ml-1">Kategori Peserta</label>
+                                <select class="w-full px-5 py-3.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl md:rounded-2xl outline-none focus:ring-2 focus:ring-indigo-600 transition-all dark:text-white appearance-none">
+                                    <option>Mahasiswa</option>
+                                    <option>Dosen/Akademisi</option>
+                                    <option>Profesional/Umum</option>
+                                </select>
+                            </div>
+
+                            <div class="md:col-span-2">
+                                <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2 ml-1">Unggah Bukti Pembayaran</label>
+                                <div class="relative">
+                                    <input type="file" id="userProof" accept="image/*,.pdf" class="w-full px-5 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl md:rounded-2xl outline-none focus:ring-2 focus:ring-indigo-600 transition-all dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-bold file:bg-indigo-100 file:text-indigo-700 dark:file:bg-indigo-900/50 dark:file:text-indigo-300 hover:file:bg-indigo-200 cursor-pointer" required>
+                                </div>
+                            </div>
+
+                            <div class="md:col-span-2 p-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl flex gap-3 items-start">
+                                <input type="checkbox" class="w-5 h-5 mt-1 accent-indigo-600" required>
+                                <p class="text-xs text-indigo-700 dark:text-indigo-400 leading-relaxed">
+                                    Saya menyatakan telah melakukan pembayaran dan data di atas benar untuk keperluan e-sertifikat.
+                                </p>
+                            </div>
+
+                            <div class="md:col-span-2">
+                                <button type="submit" class="w-full bg-indigo-600 text-white py-4 rounded-2xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100 dark:shadow-none active:scale-95">
+                                    Kirim & Konfirmasi
+                                </button>
+                            </div>
                         </form>
 
                         <div id="successMsg" class="hidden text-center py-10">
-                            <div class="text-5xl md:text-6xl mb-6">🚀</div>
-                            <h3 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-2">Berhasil!</h3>
+                            <div class="text-6xl mb-6">🚀</div>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Pendaftaran Diterima!</h3>
                             <p id="successText" class="text-slate-500 dark:text-slate-400 text-sm mb-6 px-4"></p>
                             <button onclick="location.reload()" class="text-indigo-600 dark:text-indigo-400 font-bold text-sm underline">Daftar Lagi?</button>
                         </div>
@@ -129,12 +183,18 @@
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // Logic Dark Mode
+        // Logic Dark Mode Sinkron
         const darkToggle = document.getElementById('dark-toggle');
         const html = document.querySelector('html');
+
         darkToggle.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                html.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
         });
 
         // Hamburger Menu
@@ -142,7 +202,7 @@
         const mobileMenu = document.getElementById('mobile-menu');
         menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-        // Form Submission
+        // Form Submission Logic
         const regForm = document.getElementById('regForm');
         const successBox = document.getElementById('successMsg');
         const successText = document.getElementById('successText');
@@ -152,7 +212,7 @@
             const name = document.getElementById('userName').value;
             regForm.classList.add('hidden');
             successBox.classList.remove('hidden');
-            successText.innerText = `Halo ${name}, pendaftaran Anda berhasil! Tiket telah dikirim ke email. Sampai jumpa di UNIDA Gontor!`;
+            successText.innerText = `Terima kasih ${name}! Bukti pembayaran Anda telah kami terima. Panitia akan melakukan verifikasi dalam 1x24 jam. Info tiket akan dikirim ke WhatsApp/Email.`;
         });
     </script>
 </body>
